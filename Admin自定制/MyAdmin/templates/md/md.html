@@ -1,0 +1,18 @@
+<table class="table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            {% for foo in hd_list %}
+                <th>{{ foo }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for item in res %}
+        <tr>
+            {% for val in item %}
+                <td>{{ val }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

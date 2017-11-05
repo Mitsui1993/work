@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正在关闭的pop页面</title>
+</head>
+<body>
+
+<script>
+    var data_dict = {{ data_dict|safe }}
+    //将数据传送给发起popup的页面,opener函数可以触发打开popup的初始页面的函数;
+    opener.popupCallBack(data_dict);
+    //关闭popup
+    window.close();
+</script>
+
+</body>
+</html>

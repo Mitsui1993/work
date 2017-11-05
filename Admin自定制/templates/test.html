@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST">
+    <p>姓名：<input type="text"> </p>
+    <div>
+        <select name="title" id="ugID">
+            {% for re in res %}
+                <option value="{{ re.id }}">{{ re.title }}</option>
+            {% endfor %}
+        </select>
+        <a href="#" onclick="popupUrl('/test_add/?popup=ugID')">添加</a>
+    </div>
+
+</form>
+<script>
+    function popupUrl(url) {
+{#        alert(111);#}
+        window.open(url,"x1","status=1,height:500,width:600,toolbar=0,resizeable=0");
+    }
+    function popupCallBack(popid,opid,optext) {
+        var tag = document.createElement('option');
+        tag.innerHTML = optext;
+        tag.setAttribute('value',opid);
+        tag.setAttribute('selected','selected');
+
+        document.getElementById(popid).appendChild(tag);
+    }
+
+
+</script>
+    
+
+</body>
+</html>
